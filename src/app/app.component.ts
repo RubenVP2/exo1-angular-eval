@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     <br />
     <button (click)="viderText()">Vider</button>
     <app-list-component [cacher]="cacher"></app-list-component>
-    <button (click)="cacher = !cacher">CACHER</button>
+    <button (click)="cacher = !cacher">{{ cacher ? 'Afficher' : 'Cacher' }}</button>
   `,
   styleUrls: ['./app.component.css']
 })
