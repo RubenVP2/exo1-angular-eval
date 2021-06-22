@@ -3,18 +3,17 @@ import {Component, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'app-list-component',
   template: `
-    <div *ngIf="!cacher">
-      <ul>
-        <li>Jean</li>
-        <li>Jacques</li>
-        <li>Martin</li>
-      </ul>
-    </div>
+    <ul *ngIf="!cacher">
+      <li *ngFor="let per of personnes">
+        {{ per }}
+      </li>
+    </ul>
   `,
   styleUrls: ['./list-component.component.css']
 })
 export class ListComponentComponent implements OnInit {
 
+  personnes: Array<string> = ['Jean', 'Jacques', 'Martin'];
   @Input() cacher: boolean;
 
   constructor() { }
